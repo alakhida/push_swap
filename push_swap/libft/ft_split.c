@@ -6,7 +6,7 @@
 /*   By: alakhida <alakhida@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 16:29:08 by alakhida          #+#    #+#             */
-/*   Updated: 2022/10/26 14:52:30 by alakhida         ###   ########.fr       */
+/*   Updated: 2023/05/18 04:56:04 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ char	**ft_split(char const *s, char c)
 	if (!rslt)
 		return (NULL);
 	split(rslt, s, c);
+	free((void *)s);
 	return (rslt);
 }

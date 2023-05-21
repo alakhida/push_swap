@@ -6,7 +6,7 @@
 /*   By: alakhida <alakhida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 05:17:42 by alakhida          #+#    #+#             */
-/*   Updated: 2023/05/17 06:46:57 by alakhida         ###   ########.fr       */
+/*   Updated: 2023/05/20 03:13:31 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void rotate(t_data *stack)
 	int holder;
 	int idx;
 
+	if (stack->a_max_size == 0)
+		return ;
 	holder = stack->a_list[0];
 	idx = 1;
 	while (idx < stack->a_max_size)
@@ -45,6 +47,8 @@ void reverse_rotate(t_data *stack)
 	int holder;
 	int idx;
 
+	if (stack->a_max_size == 0)
+		return;
 	holder = stack->a_list[stack->a_max_size - 1];
 	idx = stack->a_max_size - 2;
 	while (idx >= 0)
@@ -77,22 +81,24 @@ void push_stack(t_data *stack_from, t_data *stack_to)
 	int idx;
 	
 	idx = 1;
-	tmp_stack.a_list = malloc(5);
-	// if (!tmp_stack.a_list)
-	// {
-	// 	printf("Zabi\n");
-	// 	exit(1)	;
-	// }
-	// tmp_stack.a_max_size = stack_to->a_max_size + 1;
-	// tmp_stack.a_list[0] = stack_from->a_list[0];
-	// while (idx < tmp_stack.a_max_size)
-	// {
-	// 	tmp_stack.a_list[idx] = stack_to->a_list[idx - 1];
-	// 	idx++;
-	// }
-	// if (stack_to->a_list)
-	// 	free(stack_to->a_list);
-	// stack_to->a_list = tmp_stack.a_list;
-	// stack_to->a_max_size = tmp_stack.a_max_size;
-	// push_stack_comp(stack_from);
+	if (stack_from->a_max_size == 0)
+		return ;
+	tmp_stack.a_list = malloc(sizeof(int) * (stack_to->a_max_size + 1));
+	if (!tmp_stack.a_list)
+	{
+		printf("Zabi\n");
+		exit(1)	;
+	}
+	tmp_stack.a_max_size = stack_to->a_max_size + 1;
+	tmp_stack.a_list[0] = stack_from->a_list[0];
+	while (idx < tmp_stack.a_max_size)
+	{
+		tmp_stack.a_list[idx] = stack_to->a_list[idx - 1];
+		idx++;
+	}
+	if (stack_to->a_list)
+		free(stack_to->a_list);
+	stack_to->a_list = tmp_stack.a_list;
+	stack_to->a_max_size = tmp_stack.a_max_size;
+	push_stack_comp(stack_from);
 }

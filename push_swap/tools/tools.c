@@ -6,7 +6,7 @@
 /*   By: alakhida <alakhida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 01:23:02 by alakhida          #+#    #+#             */
-/*   Updated: 2023/05/17 06:36:39 by alakhida         ###   ########.fr       */
+/*   Updated: 2023/05/20 01:38:11 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,51 @@ int	is_int(const char *str)
 			return (0);
 	}
 	return (1);
+}
+
+int get_min_num(t_data *stack)
+{
+	int idx;
+	int holder;
+
+	holder = stack->a_list[0];
+
+	idx = 0;
+	while (idx < stack->a_max_size)
+	{
+		if (stack->a_list[idx] < holder)
+			holder = stack->a_list[idx];
+		idx++;
+	}
+	return (holder);
+}
+
+int get_num_position(t_data *stack, int num)
+{
+	int idx;
+
+	idx = 0;
+	while (idx < stack->a_max_size)
+	{
+		if (num == stack->a_list[idx])
+			return (idx);
+		idx++;
+	}
+	return (-1);
+}
+
+t_moves get_moves_needed(t_data *stack, int pos)
+{
+	t_moves moves;
+	
+	if (pos > stack->a_max_size / 2)
+	{
+		moves.stack_moves_count = stack->a_max_size - pos;
+		moves.stack_moves_type = "rra";
+		return moves;
+	}
+	moves.stack_moves_count = pos;
+	moves.stack_moves_type = "ra";
+	return (moves);
+	
 }

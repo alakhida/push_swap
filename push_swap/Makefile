@@ -1,12 +1,13 @@
 CHECKER = checker
 PUSH_SWAP = push_swap
 LIB = ./libft/libft.a
-CC = gcc
+CC = cc
 # CFLAGS = -Wall -Wextra -Werror
 
 SRC =	check_input.c \
 		print_error.c main.c ./tools/tools.c\
-		./tools/tools2d.c sort.c ./tools/moves.c
+		./tools/tools2d.c sort.c ./tools/moves.c \
+		./tools/sort_three.c ./tools/fourth_fifth.c
 
 
 OBJ = $(SRC:.c=.o)

@@ -10,10 +10,16 @@
 
 
 typedef struct s_data
-{
+{   
     int a_max_size;
     int *a_list;
 } t_data;
+
+typedef struct s_moves
+{
+    int stack_moves_count;
+    char *stack_moves_type;
+} t_moves;
 
 int print_error(int i);
 int	is_valid_inputs(int ac, char **argv);
@@ -26,6 +32,14 @@ void swap(t_data *stack);
 void rotate(t_data *stack);
 void reverse_rotate(t_data *stack);
 void push_stack(t_data *stack_from, t_data *stack_to);
+int	sort_three_numbers(t_data *stack_a);
+char    ft_putstr(char *str);
+int four_fifth_case(t_data *stack_a, t_data *stack_b, int count);
+int get_min_num(t_data *stack);
+int get_num_position(t_data *stack, int num);
+t_moves get_moves_needed(t_data *stack, int pos);
+void printStacksVertically(t_data stack_a, t_data stack_b);
+void execute_moves(t_moves moves, t_data *stack);
 
 
  #endif
