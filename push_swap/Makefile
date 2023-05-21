@@ -7,7 +7,8 @@ CC = cc
 SRC =	check_input.c \
 		print_error.c main.c ./tools/tools.c\
 		./tools/tools2d.c sort.c ./tools/moves.c \
-		./tools/sort_three.c ./tools/fourth_fifth.c
+		./tools/sort_three.c ./tools/fourth_fifth.c \
+		./tools/sort_big_num.c
 
 
 OBJ = $(SRC:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: alakhida <alakhida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 01:25:11 by alakhida          #+#    #+#             */
-/*   Updated: 2023/05/21 04:11:28 by alakhida         ###   ########.fr       */
+/*   Updated: 2023/05/21 06:33:59 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void execute_moves(t_moves moves, t_data *stack)
 {
 	while (moves.stack_moves_count > 0)
 	{
-		if (ft_strncmp(moves.stack_moves_type, "ra", 4) == 0)
+		if ((ft_strncmp(moves.stack_moves_type, "ra", 4) == 0))
 		{
 			rotate(stack);
 			ft_putstr("ra\n");
@@ -45,7 +45,7 @@ int four_fifth_case(t_data *stack_a, t_data *stack_b, int count)
 	{
 		smaller_num = get_min_num(stack_a);
 		smaller_num_pos = get_num_position(stack_a ,smaller_num);
-		moves = get_moves_needed(stack_a, smaller_num_pos);
+		moves = get_moves_needed(stack_a, smaller_num_pos, "rra", "ra");
 		execute_moves(moves, stack_a);
 		push_stack(stack_a, stack_b);
 		ft_putstr("pb\n");

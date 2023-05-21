@@ -6,7 +6,7 @@
 /*   By: alakhida <alakhida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 01:23:02 by alakhida          #+#    #+#             */
-/*   Updated: 2023/05/20 01:38:11 by alakhida         ###   ########.fr       */
+/*   Updated: 2023/05/21 07:15:55 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,22 @@ int get_min_num(t_data *stack)
 	return (holder);
 }
 
+int get_big_num(t_data *stack)
+{
+	int idx;
+	int holder;
+
+	holder = stack->a_list[0];
+	idx = 0;
+	while (idx < stack->a_max_size)
+	{
+		if (stack->a_list[idx] > holder)
+			holder = stack->a_list[idx];
+		idx++;
+	}
+	return (holder);
+}
+
 int get_num_position(t_data *stack, int num)
 {
 	int idx;
@@ -103,4 +119,20 @@ t_moves get_moves_needed(t_data *stack, int pos)
 	moves.stack_moves_type = "ra";
 	return (moves);
 	
+}
+
+int check_is_sorted(t_data *stack)
+{
+	int	idx;
+
+	idx = 0;
+	while (idx < stack->a_max_size)
+	{
+		if (idx + 1 == stack->a_max_size)
+			return (1);
+		if (stack->a_list[idx] > stack->a_list[idx + 1])
+			return (0);
+		idx++;
+	}
+	return (1);
 }
