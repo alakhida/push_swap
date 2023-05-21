@@ -6,7 +6,7 @@
 /*   By: alakhida <alakhida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 01:25:11 by alakhida          #+#    #+#             */
-/*   Updated: 2023/05/21 04:08:33 by alakhida         ###   ########.fr       */
+/*   Updated: 2023/05/21 04:11:28 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int four_fifth_case(t_data *stack_a, t_data *stack_b, int count)
 	
 	while (count > 0)
 	{
-		printf("Here\n");
 		smaller_num = get_min_num(stack_a);
 		smaller_num_pos = get_num_position(stack_a ,smaller_num);
 		moves = get_moves_needed(stack_a, smaller_num_pos);
@@ -54,5 +53,11 @@ int four_fifth_case(t_data *stack_a, t_data *stack_b, int count)
 	}
 	sort_three_numbers(stack_a);
 	push_stack(stack_b, stack_a);
+	ft_putstr("pa\n");
+	if (holder == 2)
+	{
+		push_stack(stack_b, stack_a);
+		ft_putstr("pa\n");
+	}
 	return(0);
 }
