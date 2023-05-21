@@ -6,7 +6,7 @@
 /*   By: alakhida <alakhida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 04:13:27 by alakhida          #+#    #+#             */
-/*   Updated: 2023/05/21 07:16:02 by alakhida         ###   ########.fr       */
+/*   Updated: 2023/05/21 07:25:19 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,6 @@ int is_befor_range(t_data *tmp_stack, t_data *stack_a, int range_from)
 
 void exec_moves(t_moves moves, t_data *stack)
 {
-	printf("%d\n", moves.stack_moves_count);
-	exit(0);
 	while (moves.stack_moves_count > 0)
 	{
 		if (ft_strncmp(moves.stack_moves_type, "rb", 4) == 0)
@@ -116,14 +114,49 @@ void exec_moves(t_moves moves, t_data *stack)
 	}
 }
 
+t_moves get_moves_needed2(t_data *stack, int pos)
+{
+	t_moves moves;
+	
+	if (pos > stack->a_max_size / 2)
+	{
+		moves.stack_moves_count = stack->a_max_size - pos;
+		moves.stack_moves_type = "rrb";
+		return moves;
+	}
+	moves.stack_moves_count = pos;
+	moves.stack_moves_type = "rb";
+	return (moves);
+	
+}
+
 void push_to_a(t_data *stack_a, t_data *stack_b)
 {
 	int num_pos;
 	t_moves moves;
+	int count;
 	while (stack_b->a_max_size > 0)
 	{
 		num_pos = get_num_position(stack_b, get_big_num(stack_b));
-		
+		if (num_pos > (stack_b->a_max_size / 2))
+		{
+			count = stack_b->a_max_size - num_pos;
+			while (count > 0)
+			{
+				reverse_rotate(stack_b);
+				printf("rrb\n");
+				count--;
+			}
+		}else
+		{
+			count = num_pos;
+			while (count > 0)
+			{
+				rotate(stack_b);
+				printf("rb\n");
+				count--;
+			}
+		}
 		push_stack(stack_b, stack_a);
 		printf("pa\n");
 	}

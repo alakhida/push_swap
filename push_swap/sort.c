@@ -6,7 +6,7 @@
 /*   By: alakhida <alakhida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 05:17:55 by alakhida          #+#    #+#             */
-/*   Updated: 2023/05/21 06:57:55 by alakhida         ###   ########.fr       */
+/*   Updated: 2023/05/21 07:26:42 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ void deside_case(t_data *stack_a, t_data *stack_b)
 	else if (stack_a->a_max_size <= 100)
 	{
 		sort_big_num(stack_a, stack_b, 0, 15);
+	}
+	else if (stack_a->a_max_size > 100)
+	{
+		sort_big_num(stack_a, stack_b, 0, 31);
 	}
 }
 void printStacksVertically(t_data stack_a, t_data stack_b)
