@@ -6,7 +6,7 @@
 /*   By: alakhida <alakhida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 01:02:24 by alakhida          #+#    #+#             */
-/*   Updated: 2023/05/24 16:18:35 by alakhida         ###   ########.fr       */
+/*   Updated: 2023/05/24 17:05:16 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	third_case(t_data *stack_a)
 		ft_putstr("ra\n");
 		return (1);
 	}
-		free(stack_a->a_list);
+		// free(stack_a->a_list);
 	return (0);
 }
 
