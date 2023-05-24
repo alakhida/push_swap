@@ -6,7 +6,7 @@
 /*   By: alakhida <alakhida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 05:17:55 by alakhida          #+#    #+#             */
-/*   Updated: 2023/05/21 07:35:22 by alakhida         ###   ########.fr       */
+/*   Updated: 2023/05/24 01:17:46 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void create_stack(char **numbers, t_data *data)
 		data->a_list[idx] = ft_atoi(numbers[idx]);
 		idx++;
 	}
+	if (numbers == NULL)
+		free_2d(numbers);
 }
 
 void deside_case(t_data *stack_a, t_data *stack_b)
@@ -43,31 +45,9 @@ void deside_case(t_data *stack_a, t_data *stack_b)
 	{
 		sort_big_num(stack_a, stack_b, 0, 31);
 	}
+
 }
-void printStacksVertically(t_data stack_a, t_data stack_b)
-{
-    int max_size = (stack_a.a_max_size > stack_b.a_max_size) ? stack_a.a_max_size : stack_b.a_max_size;
-    int i;
 
-    printf("Stack A\t\tStack B\n");
-    printf("-----------------------\n");
-
-    for (i = 0; i < max_size; i++) {
-        if (i < stack_a.a_max_size) {
-            printf("%d\t\t", stack_a.a_list[i]);
-        } else {
-            printf("\t\t");
-        }
-
-        if (i < stack_b.a_max_size) {
-            printf("%d", stack_b.a_list[i]);
-        }
-
-        printf("\n");
-    }
-
-    printf("-----------------------\n");
-}
 void sort(char **av)
 {
 	t_data stack_a;
@@ -80,8 +60,8 @@ void sort(char **av)
 	create_stack(av, &stack_a);
 	stack_b.a_list = NULL;
 	stack_b.a_max_size = 0;
-
-	
 	deside_case(&stack_a, &stack_b);
-
-}
+	check_is_sorted(&stack_a);
+	free (stack_a.a_list);
+	free (stack_b.a_list);
+	}

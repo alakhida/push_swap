@@ -6,7 +6,7 @@
 /*   By: alakhida <alakhida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 05:17:42 by alakhida          #+#    #+#             */
-/*   Updated: 2023/05/20 03:13:31 by alakhida         ###   ########.fr       */
+/*   Updated: 2023/05/24 01:46:21 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,10 +85,7 @@ void push_stack(t_data *stack_from, t_data *stack_to)
 		return ;
 	tmp_stack.a_list = malloc(sizeof(int) * (stack_to->a_max_size + 1));
 	if (!tmp_stack.a_list)
-	{
-		printf("Zabi\n");
 		exit(1)	;
-	}
 	tmp_stack.a_max_size = stack_to->a_max_size + 1;
 	tmp_stack.a_list[0] = stack_from->a_list[0];
 	while (idx < tmp_stack.a_max_size)

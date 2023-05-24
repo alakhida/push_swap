@@ -6,7 +6,7 @@
 /*   By: alakhida <alakhida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 04:13:27 by alakhida          #+#    #+#             */
-/*   Updated: 2023/05/21 07:25:19 by alakhida         ###   ########.fr       */
+/*   Updated: 2023/05/24 01:23:39 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,6 @@ int is_after(t_data *tmp_stack, t_data *stack_a, int range_to)
 
 int is_in_range(t_data *tmp_stack, t_data *stack_a, int range_from, int range_to)
 {
-	// printf("range from: %d | %d\n", range_from, stack_a->a_list[0]);
-	// printf("-%d\n", tmp_stack->a_list[10]);
 	while (range_from <= range_to)
 	{
 		if (stack_a->a_list[0] == tmp_stack->a_list[range_from])
@@ -86,14 +84,6 @@ int is_befor_range(t_data *tmp_stack, t_data *stack_a, int range_from)
 	}
 	return (0);
 }
-
-// void push_to_b(t_data *stack_a, t_data *stack_b, int code, int *range_from, int *range_to)
-// {
-// 	if (code == 1)
-// 	{
-		
-// 	}
-// }
 
 void exec_moves(t_moves moves, t_data *stack)
 {
@@ -160,6 +150,7 @@ void push_to_a(t_data *stack_a, t_data *stack_b)
 		push_stack(stack_b, stack_a);
 		printf("pa\n");
 	}
+	free (stack_b->a_list);
 }
 
 void sort_big_num(t_data *stack_a, t_data *stack_b, int range_from, int range_to)

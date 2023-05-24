@@ -6,7 +6,7 @@
 /*   By: alakhida <alakhida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 01:23:02 by alakhida          #+#    #+#             */
-/*   Updated: 2023/05/21 07:15:55 by alakhida         ###   ########.fr       */
+/*   Updated: 2023/05/24 01:31:40 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,8 @@ int get_num_position(t_data *stack, int num)
 			return (idx);
 		idx++;
 	}
-	return (-1);
+	//return -1 if didn't work
+	return (0);
 }
 
 t_moves get_moves_needed(t_data *stack, int pos)
@@ -134,5 +135,6 @@ int check_is_sorted(t_data *stack)
 			return (0);
 		idx++;
 	}
+	free (stack->a_list);
 	return (1);
 }
