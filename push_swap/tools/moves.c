@@ -6,7 +6,7 @@
 /*   By: alakhida <alakhida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 05:17:42 by alakhida          #+#    #+#             */
-/*   Updated: 2023/05/24 01:46:21 by alakhida         ###   ########.fr       */
+/*   Updated: 2023/05/24 16:22:24 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void push_stack_comp(t_data *stack_from)
 	tmp_stack.a_max_size = stack_from->a_max_size - 1;
 	while (idx2 < tmp_stack.a_max_size)
 		tmp_stack.a_list[idx2++] = stack_from->a_list[idx++];
+	free(stack_from->a_list);
 	stack_from->a_list = tmp_stack.a_list;
 	stack_from->a_max_size = tmp_stack.a_max_size;
 }

@@ -43,6 +43,8 @@ void execute_moves(t_moves moves, t_data *stack);
 void sort_big_num(t_data *stack_a, t_data *stack_b, int range_from, int range_to);
 int check_is_sorted(t_data *stack);
 int get_big_num(t_data *stack);
+int sort_two_num(t_data *stack_a);
+
 
 
  #endif

@@ -6,7 +6,7 @@
 /*   By: alakhida <alakhida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 01:02:24 by alakhida          #+#    #+#             */
-/*   Updated: 2023/05/20 02:54:52 by alakhida         ###   ########.fr       */
+/*   Updated: 2023/05/24 16:18:35 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,16 @@ int	sort_three_numbers(t_data *stack_a)
 		return (1);
 	else if (fifth_case(stack_a))
 		return (1);
+	return (0);
+}
+
+int sort_two_num(t_data *stack_a)
+{
+	if ((stack_a->a_list[0] > stack_a->a_list[1]))
+	{
+		swap(stack_a);
+		ft_putstr("sa\n");
+		return (1);
+	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: alakhida <alakhida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 04:13:27 by alakhida          #+#    #+#             */
-/*   Updated: 2023/05/24 01:23:39 by alakhida         ###   ########.fr       */
+/*   Updated: 2023/05/24 16:29:35 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,7 +150,6 @@ void push_to_a(t_data *stack_a, t_data *stack_b)
 		push_stack(stack_b, stack_a);
 		printf("pa\n");
 	}
-	free (stack_b->a_list);
 }
 
 void sort_big_num(t_data *stack_a, t_data *stack_b, int range_from, int range_to)
@@ -183,4 +182,5 @@ void sort_big_num(t_data *stack_a, t_data *stack_b, int range_from, int range_to
 		}
 	}
 	push_to_a(stack_a, stack_b);
+	free(tmp_stack.a_list);
 }
