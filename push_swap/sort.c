@@ -6,7 +6,7 @@
 /*   By: alakhida <alakhida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 05:17:55 by alakhida          #+#    #+#             */
-/*   Updated: 2023/05/24 16:53:54 by alakhida         ###   ########.fr       */
+/*   Updated: 2023/05/24 16:58:07 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,8 @@ void sort(char **av)
 	stack_b.a_list = NULL;
 	stack_b.a_max_size = 0;
 	deside_case(&stack_a, &stack_b);
-	printf("%s", check_is_sorted(&stack_a) == 1 ? "true" : "false");
+	// printf("%s", check_is_sorted(&stack_a) == 1 ? "true" : "false");
 	free (stack_a.a_list);
-	free (stack_b.a_list);
+	if (stack_a.a_max_size > 4)
+		free (stack_b.a_list);
 	}
