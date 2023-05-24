@@ -6,7 +6,7 @@
 /*   By: alakhida <alakhida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 05:17:55 by alakhida          #+#    #+#             */
-/*   Updated: 2023/05/24 16:31:46 by alakhida         ###   ########.fr       */
+/*   Updated: 2023/05/24 16:53:54 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,25 @@
 void create_stack(char **numbers, t_data *data)
 {
 	int idx;
+	char *joined_av;
+	char **splited_av;
 	
+	joined_av = get_argv(numbers);
+	splited_av = ft_split(joined_av, ' ');
+
 	idx = 0;
-	data->a_list = malloc(sizeof(int) * len_2d(numbers));
-	data->a_max_size = len_2d(numbers);
+	data->a_list = malloc(sizeof(int) * len_2d(splited_av));
+	// printf("%d\n", len_2d(splited_av));
+	// exit(1);
+	data->a_max_size = len_2d(splited_av);
 	while (idx < data->a_max_size)
 	{
-		data->a_list[idx] = ft_atoi(numbers[idx]);
+		data->a_list[idx] = ft_atoi(splited_av[idx]);
 		idx++;
 	}
-	if (numbers == NULL)
-		free_2d(numbers);
+	// exit(1);
+	// if (numbers == NULL)
+	// 	free_2d(numbers);
 }
 
 void deside_case(t_data *stack_a, t_data *stack_b)
