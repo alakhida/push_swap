@@ -1,7 +1,19 @@
 #include "push_swap.h"
 #include <unistd.h>
 
-char    ft_putstr(char *str)
+void    ft_putstr_2(char *str)
+{
+    int     i;
+
+    i = 0;
+    while (str[i] != '\0')
+    {
+        write(2, &str[i], 1);
+        i++;
+    }
+}
+
+void    ft_putstr(char *str)
 {
     int     i;
 
@@ -11,14 +23,10 @@ char    ft_putstr(char *str)
         write(1, &str[i], 1);
         i++;
     }
-    return (0);
 }
-
 int print_error(int i)
 {
     if (i == 1)
-        ft_putstr("erroooooorrrrrrr\n");
-    else if (i == 2)
-        ft_putstr("not enough arg\n");
+        ft_putstr_2("\033[0;30mError\n");
     exit (1);
 }

@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_input.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alakhida <alakhida@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/24 17:25:47 by alakhida          #+#    #+#             */
+/*   Updated: 2023/05/24 17:25:47 by alakhida         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 #include "./libft/libft.h"
@@ -22,15 +33,15 @@ int	check_double(char **arr)
 	return (1);
 }
 
-int check_int_ragne(char **numbers)
+int	check_int_range(char **numbers)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (numbers[i])
 	{
 		if (!is_int(numbers[i]))
-			return (0);
+			print_error(1);
 		i++;
 	}
 	return (1);
@@ -55,10 +66,10 @@ int	check_input(char *arr)
 	return (1);
 }
 
-int check_char(char **numbers)
+int	check_char(char **numbers)
 {
-	int i;
-	int j;
+	int		i;
+	int		j;
 
 	i = 0;
 	while (numbers[i])
@@ -66,6 +77,8 @@ int check_char(char **numbers)
 		j = 0;
 		while (numbers[i][j])
 		{
+			if (numbers[i][j] == '\n')
+				j++;
 			if ((numbers[i][j] == '-' || numbers[i][j] == '+') && j != 0)
 				return (0);
 			else if (numbers[i][j] == '-' || numbers[i][j] == '+')
@@ -82,28 +95,20 @@ int check_char(char **numbers)
 
 int	is_valid_inputs(int ac, char **argv)
 {
-	int i;
-	char *joined_av;
-	char **numbers;
+	char	*joined_av;
+	char	**numbers;
+	int		i;
 
+	i = 0;
 	joined_av = get_argv(argv);
 	numbers = ft_split(joined_av, ' ');
-	i = 0;
-	if (!check_int_ragne(numbers))
-	{
-		
-		printf("Number is greater or smaller than int range\n");
-		exit (1);
-	}
-	 if (!check_double(numbers))
-	{
-		printf("Duplicated numbers\n");
-		exit (1);
-	}
+	if (numbers == NULL)
+		return (0);
+	if (!check_double(numbers))
+		print_error (1);
 	if (!check_char(numbers))
-	{
-		printf("There is a char in argv\n");
-		exit (1);
-	}
+		print_error (1);
+	if (!check_int_range(numbers))
+		print_error (1);
 	return (1);
 }

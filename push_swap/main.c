@@ -6,7 +6,7 @@
 /*   By: alakhida <alakhida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 01:07:52 by alakhida          #+#    #+#             */
-/*   Updated: 2023/05/24 17:05:58 by alakhida         ###   ########.fr       */
+/*   Updated: 2023/05/25 04:49:11 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 int main(int ac, char *av[])
 {
 	if (ac < 2)
-		print_error(2); 
+		exit (1);
     is_valid_inputs(ac ,av + 1);
     sort(av + 1);
+	// pause();
 }

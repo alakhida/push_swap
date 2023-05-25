@@ -6,7 +6,7 @@
 /*   By: alakhida <alakhida@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 01:23:02 by alakhida          #+#    #+#             */
-/*   Updated: 2023/05/24 01:31:40 by alakhida         ###   ########.fr       */
+/*   Updated: 2023/05/25 02:34:56 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	is_int(const char *str)
 		r *= 10;
 		r += str[i++] - '0';
 		holder = r * s;
-		if (holder > INT_MAX || holder < INT_MIN)
+		if (holder > 2147483647 || holder < -2147483648)
 			return (0);
 	}
 	return (1);
@@ -102,7 +102,6 @@ int get_num_position(t_data *stack, int num)
 			return (idx);
 		idx++;
 	}
-	//return -1 if didn't work
 	return (0);
 }
 
