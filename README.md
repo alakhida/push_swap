@@ -138,7 +138,6 @@ After lots of research and testing, I implemented different strategies based on 
 ---
 
 **"The best way to learn programming is to program... and debug... and debug some more."**  
-— My experience with push_swap! 🚀
 
 **Final Grade: 100/100 ⭐**
 
