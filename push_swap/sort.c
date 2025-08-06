@@ -52,7 +52,7 @@ void	deside_case(t_data *stack_a, t_data *stack_b)
 	}
 }
 
-void	sort(char **av)
+void	sort(int count, char **av)
 {
 	t_data	stack_a;
 	t_data	stack_b;

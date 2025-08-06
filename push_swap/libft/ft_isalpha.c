@@ -10,11 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/** Checks if the given character is an alphabetic letter (A-Z or a-z).
+** Returns 1 if true, 0 otherwise.
+*/
+
 #include "libft.h"
 
 int	ft_isalpha(int c)
 {
-	if ((c > 64 && c < 91) || (c > 96 && c < 123))
-		return (1);
-	return (0);
+    if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+        return (1);
+    return (0);
 }

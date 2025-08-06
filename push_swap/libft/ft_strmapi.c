@@ -9,7 +9,12 @@
 /*   Updated: 2022/11/04 01:02:34 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
+** Applies the function 'f' to each character of the string 's' to create a new string,
+** passing its index as the first argument and the character as the second.
+** Returns the new string created by successive applications of 'f'.
+** Returns NULL if allocation fails or if 's' or 'f' is NULL.
+*/
 #include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f) (unsigned int, char))

@@ -27,7 +27,7 @@ char *get_argv(char **argv);
 int	is_int(const char *str);
 void free_2d(char **str);
 size_t len_2d(char **str);
-void sort(char **av);
+void sort(int count,char **av);
 void swap(t_data *stack);
 void rotate(t_data *stack);
 void reverse_rotate(t_data *stack);

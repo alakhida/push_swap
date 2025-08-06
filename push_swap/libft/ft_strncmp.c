@@ -9,6 +9,11 @@
 /*   Updated: 2022/10/15 23:21:52 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/*
+** Compares at most the first n bytes of two strings s1 and s2.
+** Returns an integer less than, equal to, or greater than zero if s1 is found,
+** respectively, to be less than, to match, or be greater than s2.
+*/
 
 #include "libft.h"
 

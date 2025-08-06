@@ -9,7 +9,11 @@
 /*   Updated: 2022/10/27 17:40:10 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
+** Applies the function 'f' to each character of the string 's',
+** passing its index as the first argument and the address of the character as the second.
+** Each character may be modified by the function 'f'.
+*/
 #include "libft.h"
 
 void	ft_striteri(char *s, void (*f) (unsigned int, char*))
@@ -23,19 +27,3 @@ void	ft_striteri(char *s, void (*f) (unsigned int, char*))
 		i++;
 	}
 }
-
-/*void myf(unsigned int i , char *mys)
-{
-	if(i > 2)
-	{
-		mys[i] = 'X';
-	}
-
-}
-
-int main()
-{
-	char str[]="HASSAN";
-	ft_striteri(str , myf);
-	printf("%s\n",str);
-}*/

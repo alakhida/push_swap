@@ -9,6 +9,12 @@
 /*   Updated: 2022/10/10 22:49:58 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* Fills the first len bytes of the memory area pointed to by b
+   with the constant byte c.
+   Returns a pointer to the memory area b.
+*/
+
 #include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)

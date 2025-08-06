@@ -6,34 +6,37 @@
 /*   By: alakhida <alakhida@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 22:02:05 by alakhida          #+#    #+#             */
-/*   Updated: 2023/05/18 04:57:13 by alakhida         ###   ########.fr       */
+/*   Updated: 2022/11/03 22:48:39 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+//this function convert a string representation of an integer to its corresponding integer value.
 #include "libft.h"
 
 int	ft_atoi(const char *str)
 {
-	int	s;
-	int	r;
-	int	i;
+	int	sign;
+	int	result;
+	int	index;
 
-	r = 0;
-	s = 1;
-	i = 0;
-	while (str[i] && (str[i] == '\f' || str[i] == '\t' || str[i] == ' '
-			|| str[i] == '\n' || str[i] == '\r' || str[i] == '\v'))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	result = 0;
+	sign = 1;
+	index = 0;
+	//skip whitespaces
+	while (str[index] && (str[index] == '\f' || str[index] == '\t' || str[index] == ' '
+			|| str[index] == '\n' || str[index] == '\r' || str[index] == '\v'))
+		index++;
+	//handling sign
+	if (str[index] == '-' || str[index] == '+')
 	{
-		if (str[i++] == '-')
-			s = -1;
+		if (str[index++] == '-')
+			sign = -1;
 	}
-	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	//converting character to int
+	while (str[index] && str[index] >= '0' && str[index] <= '9')
 	{
-		r *= 10;
-		r += str[i++] - '0';
+		result = result * 10;
+		result += str[index++] - '0';
 	}
-	r *= s;
-	return (r);
+result *= sign;
+	return (result);	
 }

@@ -16,9 +16,14 @@
 
 int main(int ac, char *av[])
 {
-	if (ac < 2)
+	if (ac < 2){
+		ft_putstr("not enough argument!\n");
 		exit (1);
-    is_valid_inputs(ac ,av + 1);
-    sort(av + 1);
+
+	}
+	if (ac == 2)
+		return 0;
+    is_valid_inputs(ac - 1, av + 1);
+    sort(ac - 1, av + 1);
 	// pause();
 }

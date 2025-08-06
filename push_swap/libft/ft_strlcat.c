@@ -10,6 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** Appends the NUL-terminated string 'src' to the end of 'dst'.
+** It will append at most dstsize - strlen(dst) - 1 bytes, NUL-terminating the result.
+** Returns the total length of the string it tried to create:
+** initial length of dst plus length of src.
+*/
+
 #include "libft.h"
 
 unsigned int	ft_strlcat(char *dst, const char *src, size_t dstsize)

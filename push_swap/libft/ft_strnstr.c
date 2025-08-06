@@ -9,6 +9,10 @@
 /*   Updated: 2022/10/18 01:39:22 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/*The  strnstr() function locates the first occurrence of the null-terminated string little in
+  the string big, where not more than len characters are searched.  Characters that appear af‐
+  ter a ‘\0’ character are not searched.
+*/
 
 #include "libft.h"
 

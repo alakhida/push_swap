@@ -10,23 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** Allocates memory for an array of 'count' elements of 'size' bytes each,
+** and initializes all bytes in the allocated storage to zero.
+** Returns a pointer to the allocated memory, or NULL if allocation fails.
+*/
+
 #include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	char			*dst;
-	unsigned int	t;
-	unsigned int	i;
+    char	*dst;
+    size_t	total;
+    size_t	i;
 
-	t = count * size;
-	dst = malloc(t);
-	if (!dst)
-		return (NULL);
-	i = 0;
-	while (t--)
-	{
-		dst[i] = 0;
-		i++;
-	}
-	return ((void *)dst);
+    total = count * size;
+    dst = malloc(total);
+    if (!dst)
+        return (NULL);
+    i = 0;
+    while (i < total)
+    {
+        dst[i] = 0;
+        i++;
+    }
+    return ((void *)dst);
 }

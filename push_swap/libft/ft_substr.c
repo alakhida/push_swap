@@ -9,6 +9,11 @@
 /*   Updated: 2022/10/25 11:44:18 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/*
+** Allocates and returns a substring from the string 's'.
+** The substring begins at index 'start' and is of maximum length 'len'.
+** Returns the substring, or NULL if allocation fails or 's' is NULL.
+*/
 
 #include "libft.h"
 

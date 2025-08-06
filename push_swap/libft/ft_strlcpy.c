@@ -9,6 +9,12 @@
 /*   Updated: 2022/10/15 21:31:04 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/*
+** Appends the NUL-terminated string 'src' to the end of 'dst'.
+** It will append at most dstsize - strlen(dst) - 1 bytes, NUL-terminating the result.
+** Returns the total length of the string it tried to create:
+** initial length of dst plus length of src.
+*/
 
 #include "libft.h"
 

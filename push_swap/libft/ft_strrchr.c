@@ -9,7 +9,9 @@
 /*   Updated: 2022/10/22 22:18:50 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*The strrchr() function returns a pointer to the last occurrence of the character  c  in  the
+  string s.
+*/
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)

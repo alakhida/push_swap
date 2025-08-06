@@ -9,7 +9,8 @@
 /*   Updated: 2022/10/22 23:24:14 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/* The  strdup()  function returns a pointer to a new string which is a duplicate of the string
+       s.  Memory for the new string is obtained with malloc.*/
 #include "libft.h"
 
 char	*ft_strdup(const char *s1)

@@ -9,6 +9,11 @@
 /*   Updated: 2022/10/25 14:39:46 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/*
+** Removes all characters in 'set' from the beginning and end of 's1'.
+** Returns a newly allocated string with the trimmed content.
+** If 's1' is NULL, returns NULL.
+*/
 
 #include "libft.h"
 

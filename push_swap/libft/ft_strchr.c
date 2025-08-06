@@ -9,7 +9,7 @@
 /*   Updated: 2022/10/15 23:32:36 by alakhida         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/* same as strchr function in standard c library (man strchr) for more information*/
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)

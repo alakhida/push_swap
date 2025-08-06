@@ -10,23 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Compares the first n bytes of the memory areas s1 and s2.
+Returns an integer less than, equal to, or greater than zero if s1 is found,
+respectively, to be less than, to match, or be greater than s2.*/
+
 #include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t			i;
-	unsigned char	*ps1;
-	unsigned char	*ps2;
+    size_t			i;
+    unsigned char	*ps1;
+    unsigned char	*ps2;
 
-	ps1 = (unsigned char *)s1;
-	ps2 = (unsigned char *)s2;
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (*ps1 == *ps2 && ++i < n)
-	{
-		ps1++;
-		ps2++;
-	}
-	return ((int)(*ps1 - *ps2));
+    ps1 = (unsigned char *)s1;
+    ps2 = (unsigned char *)s2;
+    i = 0;
+    if (n == 0)
+        return (0);
+    while (*ps1 == *ps2 && ++i < n)
+    {
+        ps1++;
+        ps2++;
+    }
+    return ((int)(*ps1 - *ps2));
 }
